@@ -1,0 +1,128 @@
+CSS (PART 2 complete guide) page 92 onwards, starting with inheritance. 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+(1) <!-- the element with the least specificity, dominance, (below that imposed by default, 
+    are the attributes herited)-->
+(1.1) <!-- the element specified through heritance will be ovewritten by the elements 
+    specified through default of the H1 because heritance is lower on the hierarchy-->
+    <!-- h1 has only a default about the font weight, not color. Therfore, font weight given through inheritance
+    will be overwritten by what is h1's default, but the color given through inheritance will pass on because 
+    there is no element of h1's default contradicting it ONLY LOOK AT THE FIRST DIV-->
+
+ (1.2) <!--two competing elements trying to define H1 and p. They inherit from div: the color, but sometimes it is
+     overwritten by the css internal p because it is higher in the hierarchy than heritage, but the color because default does
+     not specify does get passed through heritage, but gets overwritten in case for p, because element higher in the hierarchy that
+     specifies color is present LOOK AT THE SECOND DIV AND P--> 
+(1.3) <!-- i won't expand on this, you can put color:inherit, and the attribute will inherit the color, if an element higher on the hierarchy
+specifies color (like an id), you can put inherit the color, and let the first id's color be inherited, the second id, up to down rule, should have
+gotten expressed but color:inherit told that the other color from div will be inherited-->
+(1.4) <!-- I won't expand on this, css internal: specify body: the font, georgia, then the h1 within the div which is in the body, will be expressed as georgia.-->
+(1.5) <!-- I am going into this one. you can conjoin the influence of more than one class on an attribute of html START .RED-->
+(1.6) <!-- In the head you can group classes which are separate, but if they share elements, you can place them together, when applying to the html 
+ RED, CENTER-->
+ (1.7) <!-- a simple etiqueta (not class or id which would override it), you make it specific, that a p gets a certain quality when placed after a div,
+whether it has to be directly descendant or other html elements can be in the way or direct heredity is determined by symbols: 
++,  ~,  > look at symbols below -->
+(1.8) <!-- the only way to override the hierarchy, and make a CSS internal class, have dominance over a inline style directly embedded in the html code, (you were right before)
+is to place !important after the element; should only use this when testing a css internal font etc.to see if you like it look at ORANGE CLASS -->
+(1.4)
+    
+     <style> 
+         div { 
+            fontweightt: 700
+            color: darkorchid
+         } 
+    
+        div {
+            color: blue
+        }
+        p {
+            color: red
+        }
+
+        .red { 
+            color: red
+        }
+        .center {
+            text-align: center;
+        }
+
+        .red, .center { 
+            font-style: italic;
+        }
+        h2+p{ <!-- applies the elements to the p that is directly after an h2, no other elment
+            in between-->
+
+        }
+        h2~,p { <!-- apllies the elements to the p that comes after h2, even if there are other elements inbetween the two-->
+
+        }
+        div>p { <!-- inheritance, applies to all the p that are directly descendant of a div, and inherit the quealities, no 
+            html elements can be in the way, cannot be inside an other element like look at ARTICLE-->
+            <!-- descendant, does not matter if they are immedietly after, inherit the div quality anyways, it is without a symbol, 
+                
+                div p { any p that comes after div, regardless if it is within another element like the article example below, gets the html elments 
+                 (given there is no one higher in the hierarchy specifying elments upon it)
+
+            }
+        }
+
+        .orange {
+            color: orange !important
+        }
+        
+
+    </style>
+
+</head>
+<body>
+(1.1)  <div> 
+        <h1> h1 inherits the color from the css internal div but it does not inherit the font weight from the div,
+            it keeps the default given by h1.
+        </h1>
+    </div>
+(1.2)
+    <div>
+        <h1>inherits the color blue from div internal </h1>
+        <p> overwritten is red, does not inherit blue from div because internal p css for color is defined</p>
+        <div> inherits blue from the bigger div</div>
+    </div>
+(1.5)
+    <h1 class="red center">you are giving it the properties of 2 different classes</h1>
+(1.6)
+    <p class="red center">although you can only reference one of them, all the atributes in the independant class will also get added as 
+        well as the combined class of red and center.</p>
+(1.7)
+<div>
+    <div> does not get element, when symbol used it only applie to the second elment in this case p </div>
+    <p>gets the attributes of div>p</p>
+    <article>
+        <p>does not get the attributes of div, isn't a direct descendant of div</p>
+    </article>
+</div>
+
+(1.7) <!---1.7: when 2 are linked CSS internal without symbol: div p: p that is descendant of div gets it regardless if it is 
+    within another html element.--> 
+<div>
+    <div> does not get div elment, when symbol used it only applies to the second one (p) </div>
+    <p>gets div element </p>
+    <article> 
+        <p> gets it, doesn't matter it is grandchild of another element </p>
+    </article>    
+</div>
+
+(1.8)
+<h2 style="color: bisque;" class="orange "> The hierarchy is overturned because of the 
+!important so this text shows up orange instead of bisque, usually inline style is highest and dominates over class and CSS inline and ID</h2>
+
+
+
+</body>
+</html>
+</html>

@@ -2,7 +2,7 @@ CSS (Complete guide).html
 <html>
     <!DOCTYPE html>
     <html lang="en">
-    <head>
+    <head> 
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -81,8 +81,8 @@ conflicts with a simple INTERNAL (2)-->
 (7) <!-- you can jumple 2 html elements same css characteristics-->
 (8) <!--(affing above: class.red and bold) hierarchy, class will be expressed over internal expressed in the
      head only because of being farther below (what i said before up to down)-->
-(9) <!--(above start black and lighter) competition between id and class, id will be expressed over class-->
-    </head>
+(9) <!--(above start black and lighter) competition between id and class, id will be expressed over class-->  
+</head>
     <body>
 (2)
     <p>show up red and in the center of the page </p>
@@ -120,7 +120,16 @@ IF THERE IS IN DIV ONE: SPECIFY FONT, BUT NOT IN SECOND, FIRST DIV FONT ATTRIBUT
         the style right inside has great speicificity i don't think more than id, but if div has something not contradicted in higher hierarchy, will be expressed)
     </div>
     
+(10) <!-- level of importance in teh hierarchy: if competing upon the same hmtl element which will be expressed-->
+<!--menor a greatest: 
+Selectores establecidos automáticamente por el navegador.
+Selector universal (*).
+Pseudoselectores y selectores de etiqueta: 
+(si existe ambigüedad, la última propiedad dentro del archivo CSS es la que prevalece).
+Clases, pseudoclases y selectores de atributo: si existe ambigüedad, (la última propiedad dentro del archivo CSS es la que prevalece).
+Selectores ID.
+Estilos inline.--> <!--Greatest to weakest dominance: 1)_INLINE style,(check you're right about what you think this means 2)id, 3)class 4) CSS internal(put in the head) and css external links 
+    5) (*)selector universal-internal head css 6)default way of presenting the servor, 7) herited attributes-->
 
-
-</body>
+</body> 
  </html>
