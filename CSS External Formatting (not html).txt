@@ -1,0 +1,12 @@
+CSS External Formatting (not html).txt 
+
+<!--(good to keep every element you are CSS affecting in the html separate pages to be able to control, color, font etc.)-->
+
+body {
+    background-color: powderblue;
+    }
+    h1{
+    color: blue;
+    } p{
+
+        

@@ -1,0 +1,101 @@
+CSS (Complete guide).html
+<html>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+(0.5) <!-- hierarchy, what will define the html tag when multiple css formats are present and compete-->
+      <!-- 1st: INLINE dominant 2nd: INTERNAL (head) or External (link) 3 (if there is competition within, 
+        the last one defined because it is read from top to bottom, one bottom is defined),
+        3rd: the navegator's default -->
+
+(1) <!-- EXTERNAL an external link to a CSS format located either in another page of your website (folder) or a link someone's website that gives you the CSS format-->
+    <!-- put the link in the head and then reference it in the body: an id-->
+    <link rel="stylesheet" href="/CSS External Formatting (not html).txt">
+    <link rel="stlesheet" href="https://www.w3schools.com/html/styles.css"> <!-- external link that is not yours-->
+    
+(2) <!-- INTERNAL add the CSS format (internal way) within the html head inside of the html tag : style-->
+<!--  * affects everything in the document-->
+<style> 
+    p {
+     color:red; 
+     text-align: left;
+     }
+    * { 
+    color: blue;
+    text-align: right
+    }
+    body { 
+        background-color: blueviolet;
+    } 
+     #idqsv { 
+        text-align: center;
+        color: brown;
+    }
+
+    .classqsv {
+        color: aqua;
+        text-align: left;
+    }
+
+    #green {
+        color: green;
+    }
+
+    div { 
+        color: pink;
+    }
+
+
+</style>
+(4)<!--(adding above) an internal (in the head) ID #1DQSV-->  
+(5) <!-- (added above) an internal (in the head) class (can be applied to multiple elements in the web,
+     should only use id once)-->
+(6) <!-- (adding above: div, #green) discussing the hierarchy, if one element of html is affected by 2 or more CSS specifyers: in this case an ID 
+conflicts with a simple INTERNAL (2)-->
+
+
+    </head>
+    <body>
+(2)
+    <p>show up red and in the center of the page </p>
+
+(3) <!--INLINE or you can add the CSS direcly in the main, next to the html attribute-->
+    <h1 style="color: blue;">I love purple and blue!</h1>
+    <p style="background-color: aquamarine;"> I love inline colors!</p>
+
+    <!--hsl(hue, saturation, lightness, alpha) con tono, saturación, claridad, opacidad
+El tono varía de 0 a 360. 0 es rojo, 120 es verde, 240 es azul y 360 vuelve a ser el
+rojo. La saturación (intensidad del color) es un valor porcentual, 0% significa un tono de
+gris y 100% es el color completo La claridad es también un porcentaje: 0% es oscuro y el 100% es claro
+La opacidad es un número: 0.0 (totalmente transparente) y 1.0 (totalmente opaco)-->
+    <h1 style="background-color:hsla(120, 100%, 64%, 0.5);">120, 100%, 64%, 0.5</h1>
+
+(4) <!-- add the # to state what ID it is refering to from the head, teh id will 
+    override the influence of p-internal-css defined in the head-->
+    <p id="idqsv">This is an html id affecting a css element (will be brown and in the center</p>
+    <p> will be red and in the left </p>
+
+(5) <!--adding a class to potentially multiple elements in the webpage, don't add . or anything before the . -->
+    <p class="classqsv">Class, will be aqua and at the left (not affected by the p grouping in the head</p>
+    <h1 class="classqsv">you get it</h1>
+    <p>will be red and in the left</p>
+(6) <!-- conflict internal and a id, id overpower the internal because it is farther down, the last thing gets expressed code read up to down-->
+    <div id="#green"> will show up green not pink (what the div says)</div>
+    <div> will be what is said in the div: color pink</div>
+
+    
+    
+
+
+
+
+
+
+
+
+</body>
+ </html>
