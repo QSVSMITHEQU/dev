@@ -1,0 +1,174 @@
+HTML (complete guide)
+!
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Queralt's practice coding</title>
+        <html lang="es">
+    <meta name="viewport" content="width=device-width, initial-scale=1" /> <meta name="keywords" content="html5, curso">
+    <meta name="author" content="Queralt">
+    <meta name="Queralt's practice" content="Curso MEAN">
+    <link rel="stylesheet" href="styles.css" /> <!--for link to CSS external page-->
+    <script src="main.js"></script> <!-- for javascript-->
+    </head>  
+    
+<body>
+(1) <!--basic structure for adding content-->
+<tagname>Content</tagname>
+ <tagname></tagname>        
+ <tagname "value1"> Content </tagname> 
+
+(2) 
+ <h1> heading </h1>
+ <p> paragraph</p>
+ <p> paragraph </p>
+ 
+(3) <!--organising the body-->
+<h1>big hedder</h1> 
+<hr><hr> (line)
+<p>paragraph</p>
+<h2>small subsection</h2>
+<h1>big header</h1>
+<hr></hr> 
+
+(4) <!--formatting the body-->
+<button>Press here</button>
+<b> Texto resaltado</b>
+<br> <!--space between the text-->
+<strong>Texto resaltado con importancia semántica</strong>
+</br>
+<i>Texto itálica</i>
+<em>Texto itálica con importancia semántica</em>
+<br>
+<mark>Texto resaltado con color</mark>
+</br>
+<br>
+<small>Texto pequeño</small>
+<del>Texto tachado</del>
+<ins>Texto subrayado</ins>
+</br>
+<sub>Texto subíndice</sub>
+<sup>Texto superíndice</sup>
+<q>Cita</q>
+<br>
+<blockquote>Bloque con cita</blockquote>
+<abbr>Abreviatura</abbr> <!-- abbr sustituye a acronym en HTML5 --> <address>Dirección de contacto</address>
+<cite>Juego de Tronos</cite>
+</br>
+<bdo dir="rtl">Texto bidireccional</bdo> 
+
+(5)
+<!-- IFRAMES, window containing content (google maps) from another web-->
+<iframe src="(site)" height="200" width="300">Hello world! </iframe>
+
+<!--  LINKS, just the line link shows up, not an integrated window --> 
+<!-- to link use (a), href: the link, can be to a page you have (in a folder, or an external link)-->
+<a href=" link/page in website "></a>
+
+<!-- or when you click, it takes you to a specific part of the page-->
+<!-- make Chapeter 4 an id-->
+<h2 id="C4"> Chapter 4 (will show up on website)</h2>
+
+<!-- add the link that leads you to chapter 4 when you click on this, chapter 4 is an id add the #-->
+<a href="#C4">Click to go to chapter 4</a> 
+
+<!-- id might be on a different page of your website so add the link to the page and the #C4 id directly after-->
+<a href="../html#C4 "> Go to Chapter 4 on the page .html</a>
+
+<!-- link an image to your page using a, href (image saved in your folder img), the alt is the text alternative, someone might request a voice description-->
+<a href="/folder"><img src="name of the image" alt="image containing a book"</a>
+
+<!-- trying out: blank, self, top, parent, -framename--->
+    <a href="blank#C4">blank links to chapter 4 (located in another page), opening another page in the top browser</a>
+    <a href="self#C4">self links to chapter 4 (located in another page) and opens it in the same page you are currently on</a>
+    <a href="top#C4">don't understand top, "abre el documento vinculado en todo el cuerpo de la ventana</a>
+    <a href="parent#C4">don't understand, "abre la página en el frame padre</a>
+    <a href="-framename---#C4">don't understand, abre el documento vinculado en un marco con nombre framename - a small pop up of the website you click on?</a>
+
+(6) 
+<!-- html structure-->
+<header>content</header> 
+
+ <article> <!--or can be at the top of the page, not in an article-->
+    <Header>
+        <h1> Environmental Chatastrophe</h1>
+        <p>the environment is our habitat. Why are we destroying our home.</p>
+    </Header>
+    <main>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus earum eligendi</p>
+    </main>
+</article>
+
+<nav>content</nav> <!-- like a navigation menu at the top leading to other pages of the webside-->
+    <nav> <!--and integrating what Marc said about clicking on a part of the box, not have to click on the writing, li inside of a (link)-->
+        <ul> <!--list-->
+            <a href="/link to page1 of website"><li>PAGE1</li></a>
+            <a href="/link to page2 of website"><li>PAGE2 </li></a>
+            <a href="/link to page3 of website"><li>PAGE3</li></a>
+            <a href="/link to page4 of website"><li>PAGE4></li></a>
+        </ul>
+    </nav>
+
+<article>content</article>
+<h1>I think this</h1>
+<p>so I think this because</p>
+
+<section>content</section>
+    <section>
+    <h1>WWF</h1>
+    <p>The World Wide Fund for Nature (WWF) is....</p>
+
+<aside>Content</aside> <!--on the margin of the website-->
+    <aside> 
+        <h4> the environmental challenges, resources you can find more information</h4>
+        <p>the national park website</p>
+    </aside>
+
+<footer>content</footer> <!--information at the bottom of the screen, telling you more information about the page, author, date, location etc.-->
+    <footer> 
+    <p>Posted by: QuSoulezAgency</p>
+    <p>Contact information: <a href="mailto:QuSoulezAgency@QSVassociation.com">QuSoulezAgency@QSVassociation.com</a>.</p>
+    <address>JFK, 23</address>
+    </footer>
+
+<main>content</main> <!--the same as the body put it aroud the whole-->
+    </body>
+    </html>
+
+<!--details and summary, summary can go in details-->
+    <details>
+    <summary>Copyright 2023</summary>
+    <p>by QuSolez. All Rights Reserved</p>
+    <p>All the content and graphics of this website are the property of QuSoulezAgency</p>
+    </details>
+
+<!--adding an image in html, another way a part from a href, you can add width and height, and a caption that goes next to the image-->
+    <figure> <img src="image in your folder" alt="voice description of the image" width="304", height="228"><figcaption>An Image of Beauty</figcaption>
+    </figure>
+
+<!-- adding time, helps google/web browser organise informaiton that might be requested by the client-->
+    <p>We open at <time> 6:00am </time> 365 days a year</p> <p> Today is <time datetime="2023-02-04"></time>.</p>
+
+<!--adding videos directly, or links to videos, external videos, like youtube or videos saved in your harddrive (client might not have access to) save videos as mp4.In this case the video is saved in your harddrive, access through folder-->
+    <video id="video" width="320" height="240" controls="controls" autoplay="autoplay" loop="loop">
+    <source src="img/movie.mp4" type="video/mp4"> <track src="subtitles_en.vtt" kind="subtitles" srclang="es" label="Spanish"></video> <!--track to add subtitiles, and add loop to make it loop-->
+
+    let x = document.getElementById("video"); x.play();
+    x.pause(); <!-- i don't know, just to pause and play-->
+
+<!--adding audio-->
+        <audio src="/image in this folder" type="audio/mpegg/wav/ogg (choose one)"></audio>
+
+<!-- adding external youtube links use an iframe, you can also embed a google map, not the top link, you need to click and it gives you the html format link--> 
+        <iframe src="https://www.youtube.com/watch?v=v3ohyHjJy3M" frameborder="0" width="300" height="315"></iframe>
+
+<!-- something I don't understand-->
+    <object width="400" height="50" data="img/bookmark.swf"></object> <!-- Soportado por HTML4 y HTML5 -->
+    <object width="100%" height="500px" data="snippet.html"></object> <embed width="100%" height="500px" src="snippet.html">
+    <object data="audi.jpeg"></object> <embed src="audi.jpeg">
+
+    <meter value=""> </meter>
+    <progress value=""></progress>
