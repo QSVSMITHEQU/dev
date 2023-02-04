@@ -49,6 +49,28 @@ CSS (Complete guide).html
         color: pink;
     }
 
+    h3,h4 { 
+        font: bold;
+    }
+
+    .redandbold {
+        color: red;
+        font: bold;
+    }
+
+    div {
+        color:violet
+
+    }
+    #black-and-lighter { 
+        font-weight: lighter;
+         color: black;
+    }
+    .red-and-bold { 
+        font-weight: bold; 
+        color: green;
+    }
+
 
 </style>
 (4)<!--(adding above) an internal (in the head) ID #1DQSV-->  
@@ -56,8 +78,10 @@ CSS (Complete guide).html
      should only use id once)-->
 (6) <!-- (adding above: div, #green) discussing the hierarchy, if one element of html is affected by 2 or more CSS specifyers: in this case an ID 
 conflicts with a simple INTERNAL (2)-->
-
-
+(7) <!-- you can jumple 2 html elements same css characteristics-->
+(8) <!--(affing above: class.red and bold) hierarchy, class will be expressed over internal expressed in the
+     head only because of being farther below (what i said before up to down)-->
+(9) <!--(above start black and lighter) competition between id and class, id will be expressed over class-->
     </head>
     <body>
 (2)
@@ -83,18 +107,19 @@ La opacidad es un número: 0.0 (totalmente transparente) y 1.0 (totalmente opaco
     <p class="classqsv">Class, will be aqua and at the left (not affected by the p grouping in the head</p>
     <h1 class="classqsv">you get it</h1>
     <p>will be red and in the left</p>
-(6) <!-- conflict internal and a id, id overpower the internal because it is farther down, the last thing gets expressed code read up to down-->
+(6) <!-- conflict internal and a id, id overpower the internal because it is farther down, the last thing gets expressed code read up to down
+SO IF THERE WERE 2 INTERNAL DIV'S IN THE HEAD, THE SECOND DIV ATTRIBUTES THAT COINCIDE: COLOR, GETS EXPRESSSED, NOT THE FIRST DIV
+IF THERE IS IN DIV ONE: SPECIFY FONT, BUT NOT IN SECOND, FIRST DIV FONT ATTRIBUTE WILL BE EXPRESSED.-->
     <div id="#green"> will show up green not pink (what the div says)</div>
     <div> will be what is said in the div: color pink</div>
-
+(8) 
+    <div>will be from 8: violet no bold</div>    
+    <div class="redandbold"> will be red and bold not violet </div>
+(9)
+    <div id="#black-and-lighter" class="red-and-bold"> will be id not class element, or div element (which have least dominance, the inline style (place
+        the style right inside has great speicificity i don't think more than id, but if div has something not contradicted in higher hierarchy, will be expressed)
+    </div>
     
-    
-
-
-
-
-
-
 
 
 </body>
