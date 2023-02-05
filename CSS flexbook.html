@@ -1,0 +1,162 @@
+CSS flexbook
+<html>
+
+<!-- flex is a container (rectangular box?) with two axis, main axis horizontal and cross axis, vertical-->
+<!--flexbox, first create an element with a display:flex
+DISPLAY:FLEX;-->
+<!--flex-container makes the simple elements in div easier to format-->
+
+<style>
+#flex-container { 
+    display: flex;
+    }
+
+
+
+(2 - 8)
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap-reverse;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: space-around;
+}
+.flex-container > div { 
+    background-color: blue; 
+    width: 50%;
+    margin: 10px; 
+    text-align: center; 
+    line-height: 75px; 
+    font-size: 30px;
+}
+</style>
+<!-- because of the > div, this means that div will inherit from the parent div the 
+attributes of the flex-container, focus on display:flex, flex-direction and line-height-->
+
+(2)
+<div class="flex-container"> 
+    <div>1</div> 
+    <div>2</div> 
+    <div>3</div>
+</div>
+
+<div id="flex-container">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+</div>
+
+(9) <div class="flex-container"> 
+        <div style="order: 3">1</div> 
+        <div style="order: 2">2</div> 
+        <div style="order: 4">3</div> 
+        <div style="order: 1">4</div>
+(10)
+<div class="flex-container">
+    <div style="flex-grow: 1" >1</div>
+     <div style="flex-grow: 6">2</div> 
+     <div style="flex-grow: 1">4</div>
+    </div>
+     
+    div class="flex-container">
+<div style="flex-shrink: 2">1</div>
+ <div style="flex-shrink: 1">2</div> 
+ <div style="flex-shrink: 0">3</div>
+ <div>4</div>
+<div>5</div>
+    
+    LOTE 2
+      
+
+</div>
+
+</html>
+<!--flex-container in this case is an ancestor of the other divs, elements herited and flex container has different
+attributes-->
+
+(2)<!--FLEX-DIRECTION direction of movement accross the main and cross axis, can be the 
+    defect: ROW: elements in the flexbox container move from left to right
+    ROW-REVERSE:elements in the container move from right to left
+    COLUMN: elements in the container move from Up to Down
+    COLUMN-REVERSE: elements in the contianer move from Down to Up
+(3) to change the height of the elements that are in the container, put LINE-HEIGHT: 75PX;
+(4) FLEX-WRAP: default elements will line up into a line. FLex-wrap changes this default
+    nowrap: by default all elements will be in a line/ WRAP: elements will be on various lines, in order from UP
+    TO DOWN/ WRAP REVERSE: elements will be on various lines from down to up. You put this in .flexcontainer, 
+    not .flexcontainter > div one
+(5) FLEX-FLOW: .flexcontainer {flex-flow;row wrap } Flex-flow combines the properties of flex-direction and Flex-wrap
+(6) JUSTIFY-CONTENT, where elements are placed on the main axis. 
+-flex-start (por defecto): los elementos son colocados al comienzo de la línea.
+-flex-end: los elementos son colocados al final de la línea.
+-center: los elementos son centrados.
+-space-between: los elementos son distribuidos en la línea con el mismo espacio de separación, 
+excepto el primer elemento y el último elemento, que se pegan a sus bordes.
+-space-around: los elementos son distribuidos en la línea con un 
+espacio semejante not the same entre ellos, pero sin solaparse, first and last elements do not touch
+the borders of the screen).
+-space-evenly: los elementos son distribuidos de tal que forma que el espacio entre dos elementos es el mismo
+ (incluido los espacios de los elementos de las esquinas).
+
+ (7) ALIGN-ITEMS: Esta propiedad alinea los elementos cuando hay espacio adicional en el eje transversal (vertical axis),
+  (some elements are longer than others) de forma similar a cómo justify-content alinea elementos individuales dentro del eje principal, horizontal axis.
+  -flex-start: los elementos son colocados en la parte superior del contenedor. 
+  -flex-end: los elementos son colocados en la parte inferior del contenedor. 
+  -center: los elementos son colocados en la parte central del contenedor. 
+  -baseline: los elementos son colocados en proporción a sus bases (texto), line up their texts together. 
+  -stretch (por defecto): los elementos ocupan todo el espacio del contenedor.
+
+  (8) ALIGN-CONTENT:aligns the lines, not the elements, when there are spaces avaliable in the y-axis
+  -flex-start: las líneas se ubican en la parte superior del contenedor.
+  -flex-end: las líneas se ubican en la parte inferior del contenedor.
+  -center: las líneas se ubican en la parte central del contenedor.
+  -space-between: las líneas son distribuidas en el contenedor con el mismo espacio de separación BETWEEN 
+  LINES, UP DOWN, 
+  excepto la primera línea y la última línea, que se pegan a sus bordes). 
+  -space-around: las líneas son distribuidas en el contenedor con un espacio semejante entre ellos,
+   pero sin solaparse (por lo que el primer elemento y el último tienen menor espacio a la izquierda y a la derecha respectivamente).
+  -stretch (por defecto): las líneas ocupan todo el espacio del contenedor.
+  -space-evenly
+  (9) ORDER: flex items, descending, defect value is 0, items are ordered smallest to biggest value item, 
+  by ascribing a value to the items, you are telling the navegator the order (example in body). 
+  (10) FLEX-GROW: Define la capacidad de un elemento para crecer si es necesario. Acepta un valor sin unidades que sirve como una proporción. 
+  Indica qué cantidad de espacio disponible dentro del contenedor flexible debe ocupar el elemento. Por defecto, el valor es 0.
+Si todos los elementos tienen un crecimiento establecido en 1, el espacio restante en el contenedor se distribuirá por igual a 
+todos los elementos. Si uno de los elementos tiene un valor de 2, el espacio restante ocuparía el doble de 
+espacio que los demás (o al menos, lo intentará) you don't need to put anything in the head style about the class.
+
+(11) FLEX SHRINK, if necessary you are telling, that the property can expand or shrink if there isn't enough space or
+there is too much space in the browser.If it is too small 0, is is stretched, if there are too many elements in a line
+it is made smaller, 2+ se contrae
+(12) FLEX BASIS: you are predetermining the size of the element (%, px), in the css line next to html, you are adding the
+size you want for one of the elements :
+<div>
+    <div style="flex-basis:500px">3</div> 
+    <div>4</div>
+    <div>5</div> 
+    <div>6</div> 
+    <div>7</div>
+</div>
+(13) FLEX: teh abb, of flex grow, flex shrink and flex-basis combined 
+    .item {
+    flex: 0 0 200px;
+    
+(14) ALIGN SELF: PARA ELEMENTOS INDIVIDUALES, NOT SETTNG FOR ALL Permite que la alineación predeterminada 
+del contenedor (stretch) se anule para elementos individuales, so it does not stretch the item.
+-flex-start: el elemento es colocado en la parte superior del contenedor. 
+-flex-end: el elemento es colocado en la parte inferior del contenedor. 
+-center: el elemento es colocado en la parte central del contenedor. 
+-baseline: el elemento es colocado en proporción a sus bases (texto).
+-stretch (por defecto): el elemento es colocado ocupa todo el espacio del contenedor. THIS IS FOR A SPECIFIC 
+ELEMENT YOU PUT IT IN THE HTML CODE
+<div class="flex-container">
+     <div>1</div>
+    <div>2</div>
+    <div style="align-self: center">3</div>
+</div>
+
+
+  
+
+
