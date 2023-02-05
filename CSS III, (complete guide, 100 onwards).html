@@ -1,0 +1,159 @@
+CSS III, (complete guide, 100 onwards)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+     div {
+    width: 320px;   
+    padding: 10px;
+    border: 5px blue;
+    margin: 0; 
+    }
+
+    div.ex2 { 
+    height: 200px;
+    width: 50%;
+    background-color: blue;
+    } 
+
+    div.ex3 {
+        width: 300px;
+        padding: 25px; <!-- the total width is 350 px (content + L/R padding)-->
+
+    }
+
+    div.ex4 { 
+        width: 300px;
+        box-sizing: border-box; <!-- default, width= content, padding, border-->
+        background-color: red;
+        
+    }
+
+    div.ex5 { 
+        display: inline;
+        border:2px; 
+        width: 300px; 
+    }
+
+(ex, 6)
+    #div {
+        display:inline-block;
+        width: 300px,
+        border: 2px red; 
+    }
+
+    /* 16 * 2.5em = 40px */
+h1 {
+font-size: 2.5em;
+}
+/* 1.875em *16 = 30px*/
+h2 {
+font-size: 1.875em;
+}
+/* 0.875em * 16 = 14px */
+p{
+   font-size: 0.875em; }
+
+ .top > * { vertical-align: top;
+} (everything that comes after the class top, will be vertical aligned at the top)
+.bottom > * { vertical-align: bottom;
+} (everything that comes after the vertical align bottom, will be aligned at the bottom)
+
+(FONT)
+h2{
+display: inline-block; margin: 0;
+width: 150px;
+text-align: right;
+font: bold 20px Sans-Sherif)
+div {
+margin: 0 0 30px 0; padding: 10px;
+}
+</style>
+<div class="middle">
+    <h2>Middle</h2>
+    <img src="http://placekitten.com/100/100" /> 
+    <img src="http://placekitten.com/200/150" /> 
+    <img src="http://placekitten.com/220/80" />
+    (all these images will inherit the div, class in the middle vertically)
+</div>
+
+</style> 
+
+</head>
+<body>
+<!-- Margin, Border, Padding, Content envelope every html content, usually you make the border a color to give it a box/
+button appearance
+width of an html element= the width of the content + left padding + right padding+ left border + right border + left margin + right margin-->
+<!-- the height of an html element= the height of the content + the top padding + bottom padding + the top border + bottom border + the top margin + bottom margin-->
+(1)
+<!-- the width= the width of just the content: calculating the total content, double the padding, border, margin (what put in style is the width of half
+    in this case total width = 320 + (10+10) 20 + (5 + 5) 10 + (0+0) 0 = 350 px (left and right))-->
+
+<div> Hello world!</div>
+(2) <!--bigger margin, more centered, margin=20 (is in total 40 px) compared to 5px (10px in total), text is more at the right --> 
+compared to the one with the greater margin-->
+(3) <!-- width and height can be expressed in : px, cm, % ... --> <!-- the default width and heights for the navegator (if you 
+    don't specify are width 100% takes up all the space, usually only use percentage on thw width, not the height (it will obstruct the view of the content
+    beneath that html element)-->
+    <!-- the elements width and height expressed in style above = the width and height of the content, therefore, excluding the 
+    width and height of the left + right padding, border, margin-->
+    <!-- content box: default, the width and the height is determined by the content (not padding, margin width and height)-->
+    <!-- padding box: the width and height is calculated by the content as well as padding (but does not specify the border and margin width and height)-->
+(4) <!--border box: (you'll use this) the width and the height is calculated by the content, padding and border (not the margin) applies to all the html elements, 
+    then you can manipulate the margin yourself, but the base width is the same for all, GO TO DIV.EX3, EX4-->
+(4)
+<div class="ex3"> width will be determined by content (300px)+left padding 25 px + right padding 25 px= 350 px width</div>
+<div class="ex4"> width will be determined by border box size (content, padding, border</div>
+
+(5) <!--display: block or inline: most elements have either as their default. block (h1-h6, div, p, section, article, nav-)means they take up the whole line even if they don't use up the space
+the inline (span, a, img) means that they just take up their width and height but can share the space of a line with another html element, this is their default, so if you manipulate
+the width to take up the whole space it won't be expressed, they have to be inline with others. Because span is a inline
+you can place a very big width but it wouldn't be expressed because it is an inline and sits in a portion of the line, shares the space the width is by default and will
+be overwritten what you write about the width in the stle, (inline and block come with default widths you cannot manipulate) -->
+<!--you can specify that an html element that is usually a block, placed as an inline by stating in the style
+: display: inline, (inline and block come with default widths)div.ex5-->
+
+(6) <!--display: inline-block;(placed together within the style in the head) as I said, you know the default is width 100% taking up all the
+page's width. To stop this, instead of minimising the width and keeping them as block, put display: inline-block so that they do not by default take up all 
+the width and the html elements can be plaed one after another in a line (just like what happens with display:inline;) BUT, the difference with the inline (and the block both come
+with a default width) is that you can manipulate the width, height, padding, margins, and they add a space between elements in different lines.div.ex6-->
+
+<span id="#div"> this will show up with a border red, and the width you specified being expressed</span>
+
+(7) <!-- DISPLAY: NONE/VISIBILITY;. I won't put an expample in in style: if you put h2 {display: none; }, what is in h2 does not get expressed in the website, h2{ display:visibility;}, 
+the h2, is invisible, but still occupies the space it did in the page, just show up as a blank space, in the other, the design shifts to fit the space
+h2 previously occupied-->
+(8) <!-- TEXT-ALIGN. I won't put an example in style; features to change the formatting of the text: 
+h2 {text-align;center/right/left/justify} (text align specifies the location on the line. Justify means
+(not sure, maybe a small indention at the start of the paragraph- my intuition is telling me this)-->
+(9) <!-- TEXT-DECORATION.I won't put an example p {text-decoration: overline/line-through/underline} overline means dark underline, line-through means it crosses out
+the text and underline bitch you know-->
+(10) <!--TEXT TRANSFORM. I won't put an example of this in style, p.uppercase (this is a class obvi) (so in the html body you put <p class"uppercase">) { 
+    text-transform:uppercase/lowercase/capitalise (first letter in uppercase)} -->
+(11) <!--TEXT INDENT, no example in the head, but it is a space at the start of the paragraph: p {text-indent: 50px; (how much space indented)}-->
+(12) <!-- LETTER SPACING, no example, how much space BETWEEN LETTERS, NOT WORDS h1 {letter-spacing: 3px;}-->
+(13) <!---LINE HEIGHT, how much space there is between the lines of a text, space between lines, lines close or far a part 
+    p {line-height: 0.6 (little space) 1.8 (big space) px}-->
+(14) <!--TEXT DIRECTION, lined like text, direction, default is at the left (do not have to specify in the head) but have to 
+specify p{text-direction:rtl (text aligned at the right of the page), text-direction: inherit (from father element like div)}-->
+(15) <!--WORD SPACING, how much space between words in a text (not letters) h1 {word-spacing:10px;}-->
+(16) <!--TEXT SHADOW,adds a background shadow to the text, x,y, you indicate the displacement from the text, coordinates, x,y,color
+p{text-shadow: 4px 6px red} -->
+(17)<!--FONT FAMILY, tells you what font you want for the text. You can place a link to an external font, that goes at the top, 
+but then you specify copy paste what they give you in the link html, attributes. Use "" when you say the name in the head if it is more than one word -->
+(18) <!---FONT STYLE, italic/oblique/normal-->
+(19) <!-- FONT SIZE (I PUT IT ABOVE IN THE HEAD): , 40px or 2px BUT USE EM, SO THAT THE WORDS ARE NOT ABSOLUTE, ARE RELATIVE AND shift as the zoom or the size of the 
+screen shifts. 1em = the default size of the text which is usually 16px so 1em=16px, and you figure out what px it is showing at by 
+timesing the em you choose with the default size 16px= the px currently being applied-->
+(20) <!--FONT-WEIGHT, if normal, lighter (thinner words of the font) or bold, or you can put a number 900 is the maximum bold you can put-->
+(21) <!--FONT VARIANT, shows the text in small all uppercase letters normal/small-caps,-->
+(22)<!--VERTICAL ALIGN when aligning images, vertical line or text that are inline or inline-block, it determines where they are placed in the line
+middle/top/bottom, I put it up because there is something I want to comment, inheritance, .top>* { vertical align:top;} means that everything that comes after
+the thing (div) ascribed to the class top, will be given the veritcal align top--> 
+
+</body>
+</html>
