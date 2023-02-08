@@ -1,0 +1,81 @@
+PROYECTO CSS/HTML
+<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+    <style>
+    *{
+    box-sizing: border-box;
+    margin:0px; 
+    font-family: 'Montserrat', sans-serif;
+    }
+
+    .main-header { 
+    display: inline-block;
+    background-color: #2ddf5c;
+    padding:8px 16px; 
+    width: 100%;
+    
+    }
+    .main-header > div {
+        vertical-align: middle;
+
+    }
+    .mainheader_brand {
+        color: #0e4f1f; 
+        text-decoration: none; 
+        font-weight: bold; 
+        font-size: 22px; 
+
+
+    }
+    .main-nav {
+    text-align: right;
+    display: inline-block;
+    width:calc(100%-49px);
+    vertical-align: middle;
+    }
+
+    li.main.nav_item { 
+    display: inline-block;
+    }
+
+    ul.main-nav_items {
+    display: inline-block;
+    margin:0;
+    padding: 0;
+    list-style: none;
+    }
+
+
+
+    </style> 
+
+</head>
+<body>
+<div>
+    <h1 class="main-header_brand">Banco</h1>
+</div>
+<nav class="main-nav">
+    <ul>
+        <li>Contact</li>
+        <li>Faqs</li>
+        <li>Page1</li>
+        <li>Page2</li>
+        <li>Page3</li> 
+        <li>Page4</li>
+    </ul>
+</nav> 
+
+</body>
+</html>
+</html>
